@@ -2,19 +2,20 @@
 function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     const getRandomChoice = Math.floor(Math.random() * choices.length);
-    console.log(choices[getRandomChoice]);
+    return choices[getRandomChoice];
 }
 
 function getHumanChoice() {
-    const enterOwnChoice = prompt("rock, paper, scissors");
-    console.log(enterOwnChoice);
+    const inputChoice = prompt("Enter your choice : rock, paper, scissors");
+    console.log(inputChoice);
+    return inputChoice;
 }
 
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    function playGround(humanChoice, computerChoice) {
+    function playRound(humanChoice, computerChoice) {
         if(humanChoice === computerChoice) {
             alert(`you both choose ${humanChoice} so, it's a tie.`);
         } else if(
@@ -26,7 +27,29 @@ function playGame() {
             humanScore++;
         } else {
             alert(`you choose ${humanChoice}. computer choose ${computerChoice}. You Loose`);
-            computerChoice++;
+            computerScore++;
         }
     }
+    //Play the Game 5 times
+    for(let i=1; i<=5; i++) {
+        alert(`Round ${i}. Get Ready!`);
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
+        alert(`Your score: ${humanScore}. computer Score: ${computerScore}.`);
+    }
+    if(humanScore < computerScore) {
+        alert("You loose the Game.");
+    } else if(humanScore > computerScore){
+        alert("You won the Game.");
+    } else {
+        alert("Too Bad, the game was tie...");
+    }
+
 }
+console.log(playGame())
+playGame();
+
+
+
