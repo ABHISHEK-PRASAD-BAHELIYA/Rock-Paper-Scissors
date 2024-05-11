@@ -1,56 +1,107 @@
-.container {
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.main-container {
     height: 700px;
     width: 1000px;
-    border: 12px solid black;
-    margin: auto;
+    border: 2px solid #d9d9d9;
+    background-color: #d9d9d9;
+    margin: 500px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 80px;
+    color: #fff;
+    background-color: #081b31;
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 50px;
+    margin-top: 6px;
 }
 
-h2 {
-    text-align: center;
-    font-size: 60px;
+#mainImg {
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 20px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: #081b31;
+}
+
+.choice {
+    height: 165px;
+    width: 165px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.choice:hover {
+    opacity: 0.5;
+    background-color: rgb(2, 58, 9);
+}
+
+img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 h3 {
     text-align: center;
-    font-size: 55px;
+    font-size: 40px;
     font-weight: 500;
-
+    margin-top: 2rem;
+    color: #081b31;
 }
 
 .playerScore {
     height: 25%;
     width: 50%;
     color: white;
-    font-size: 30px;
-    background-color: blue;
+    font-size: 2.5rem;
+    background-color: rgb(21, 71, 234);
+
 }
 .computerScore {
     height: 25%;
     width: 50%;
     color: white;
-    background-color: black;
-    font-size: 30px;
+    background-color: rgba(187, 122, 122, 0.941);
+    font-size: 2.5rem;
 }
-.scoreBoard {
+
+.Score-container {
  display: flex;
-
 }
 
-.btns {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.btn {
-    margin: 12px;
-    color: white;
-    background-color: red;
-    font-size: 50px;
-    font-weight: bold;
+
+.msg-container {
+    margin-top: 5rem;
 }
 
+#msg {
+    background-color: #e92d1f;
+    color: #fff;
+    font-size: 2rem;
+    display: inline;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
