@@ -1,60 +1,33 @@
-let showRound = document.querySelector('.round');
- showRound
+let userScore = 0;
+let compScore = 0;
+
+const choices = document.querySelectorAll('.choice');
 
 
+const genCompChoice = () => {
+    const options = ["rock", "paper", "scissors"];
+    const randIdx = Math.floor(Math.random() * 3);
+    return options[randIdx];
+}
 
-// function getComputerChoice() {
-//     const choices = ["rock", "paper", "scissors"];
-//     const getRandomChoice = Math.floor(Math.random() * choices.length);
-//     return choices[getRandomChoice];
-// }
+const drawGame = () => {
+    console.log("game was draw.")
+}
 
-// function getHumanChoice() {
-//     const inputChoice = prompt("Enter your choice : rock, paper, scissors");
-//     console.log(inputChoice);
-//     return inputChoice;
-// }
+const playGame = (userChoice) => {
+    console.log("user choice = ", userChoice);
+    //generate computer choice --> modular
+    const compChoice = genCompChoice();
+    console.log(compChoice);
 
-// function playGame() {
-//     // Declare the player score variables
-//     let humanScore = 0;
-//     let computerScore = 0;
-
-//     function playRound(humanChoice, computerChoice) {
-//         if(humanChoice === computerChoice) {
-//             alert(`you both choose ${humanChoice} so, it's a tie.`);
-//         } else if(
-//             (humanChoice === "rock" && computerChoice === "scissors")||
-//             (humanChoice === "paper" && computerChoice === "rock")||
-//             (humanChoice === "scissors" && computerChoice === "paper")
-//         ){
-//             alert(`you choose ${humanChoice}. computer choose ${computerChoice}. You win.`);
-//             humanScore++;
-//         } else {
-//             alert(`you choose ${humanChoice}. computer choose ${computerChoice}. You Loose`);
-//             computerScore++;
-//         }
-//     }
-    //Play the Game 5 times
-    for(let i=1; i<=5; i++) {
-        alert(`Round ${i}. Get Ready!`);
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-
-        playRound(humanSelection, computerSelection);
-        alert(`Your score: ${humanScore}. computer Score: ${computerScore}.`);
+    if(userChoice === compChoice) {
+        drawGame();
     }
-//     if(humanScore < computerScore) {
-//         alert("You loose the Game.");
-//     } else if(humanScore > computerScore){
-//         alert("You won the Game.");
-//     } else {
-//         alert("Too Bad, the game was tie...");
-//     }
+};
 
-// }
-// console.log(playGame())
-// playGame();
-
-
-
+choices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+        const userChoice = choice.getAttribute("id");
+        playGame(userChoice);
+    });
+});
