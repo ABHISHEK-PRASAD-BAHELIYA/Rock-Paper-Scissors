@@ -7,19 +7,31 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>Rock Paper Scissors</h1>
-        <div class="d-grid gap-2 d-md-block scoreBoard">
-            <button class="playerScore" type="button">Player: 1</button>
-            <button class="computerScore" type="button">Computer: 1</button>
-        </div>
-        <h3> Select your choice : rock, paper, scissors</h3>
-        <div class="d-grid gap-2 d-md-block btns">
-            <button class="btn btn-primary " type="button">Rock</button>
-            <button class="btn btn-primary" type="button">Paper</button>
-            <button class="btn btn-primary" type="button">Scissors</button>
-          </div>
-          <h2>Result</h2>
+        <main class="main-container">
+            <div class="header">
+                <h1>Rock Paper Scissors</h1>
+                <img src="images/rock-paper-scissors.png" alt="Game images" id="mainImg">
+            </div>
+            <div class="d-grid gap-2 d-md-block Score-container">
+                <button class="playerScore" type="button" id="user-score">Player: 0</button>
+                <button class="computerScore" type="button" id="comp-score">Computer: 0</button>
+            </div>
+            <h3> Select your choice : rock, paper, scissors</h3>
+            <div class="choices">
+                <div class="choice" id="rock">
+                    <img src="./images/rock.png"  class="rock"/>
+                  </div>    
+                  <div class="choice" id="paper">
+                    <img src="./images/paper.png" class="paper"/>
+                  </div>
+                  <div class="choice" id="scissors">
+                    <img src="./images/scissors.png" class="scissors"/>
+                  </div>
+            </div>
+            <div class="msg-container">
+                <p id="msg">Play your move</p>
+            </div>
+        </main>
     <script src="script.js"></script>
 </body>
 </html>

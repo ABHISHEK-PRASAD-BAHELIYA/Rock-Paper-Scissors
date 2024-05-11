@@ -53,8 +53,7 @@ h1 {
 }
 
 .choice:hover {
-    opacity: 0.5;
-    background-color: rgb(2, 58, 9);
+    background-color: #081b31;
 }
 
 img {
@@ -98,10 +97,10 @@ h3 {
 }
 
 #msg {
-    background-color: #e92d1f;
+    background-color: #081b31;
     color: #fff;
     font-size: 2rem;
     display: inline;
     padding: 1rem;
     border-radius: 1rem;
-  }
+}
